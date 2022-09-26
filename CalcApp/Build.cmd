@@ -1,1 +1,1 @@
-dotnet build
+C:\Program Files\dotnet\dotnet.exe build 
