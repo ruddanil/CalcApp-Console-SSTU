@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat "cd ./CalcApp
-                build.cmd"
+                bat """
+                cd ./CalcApp 
+                build.cmd
+                """
             }
         }
     }
