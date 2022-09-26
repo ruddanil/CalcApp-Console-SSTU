@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo start'
+                bat "cd ./CalcApp
+                build.cmd"
             }
         }
     }
