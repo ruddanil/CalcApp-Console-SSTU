@@ -9,5 +9,13 @@ pipeline {
                 """
             }
         }
+        stage('tests') {
+            steps {
+                bat """
+                cd ./CalcApp 
+                RunTests.cmd
+                """
+            }
+        }
     }
 }
