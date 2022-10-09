@@ -21,8 +21,8 @@ pipeline {
     post {
         success {
             mail to: "ruddanil.work@gmail.com", 
-                subject: "${env.PROJECT_NAME} build ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!",
-            body: "${env.PROJECT_NAME} build ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!\nJob - ${env.JOB_NAME}\nMore Check console output at ${env.BUILD_URL} to view the results"
+                subject: "${env.PROJECT_NAME} build ${env.BUILD_NUMBER} - ${currentBuild.currentResult}!",
+            body: "${env.PROJECT_NAME} build ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!\nJob: ${env.JOB_NAME}\nCheck console output at ${env.BUILD_URL} to view the results"
         }
     }
 }
