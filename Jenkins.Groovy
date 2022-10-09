@@ -21,5 +21,6 @@ pipeline {
     post {
         success {
         mail to: ruddanil.work@gmail.com, subject: 'The Pipeline success :)'
+        }
     }
 }
