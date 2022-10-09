@@ -21,8 +21,8 @@ pipeline {
     post {
         success {
             mail to: "ruddanil.work@gmail.com", 
-            subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
-            body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
+                subject: "${env.PROJECT_NAME} build ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!",
+            body: "${env.PROJECT_NAME} build ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!\nJob - ${env.JOB_NAME}\nMore Check console output at ${env.BUILD_URL} to view the results"
         }
     }
 }
