@@ -21,8 +21,11 @@ pipeline {
     post {
         success {
             mail to: "ruddanil.work@gmail.com", 
-            subject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!",
-            body: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results."
+            subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+            body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
+        }
+    }
+}
         }
     }
 }
