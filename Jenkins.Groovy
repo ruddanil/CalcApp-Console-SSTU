@@ -19,7 +19,7 @@ pipeline {
         }
         stage('backup') {
             steps {
-                archiveArtifacts artifacts: 
+                archiveArtifacts allowEmptyArchive: true, artifacts: '', caseSensitive: false, followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
