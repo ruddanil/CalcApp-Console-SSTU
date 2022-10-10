@@ -10,7 +10,7 @@ namespace CalcApp
     {
         public double Calc(double a, double b, string op)
         {
-            return op switch ;;
+            return op switch
             {
                 "+" => a + b,
                 "-" => a - b,
