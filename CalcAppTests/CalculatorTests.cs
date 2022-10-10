@@ -42,7 +42,7 @@ namespace CalcAppTests
         public void CalcTestDiv()
         {
             var a = 4;
-            var b = 0;
+            var b = 2;
             var op = "/";
             var calculator = new Calculator();
             double result = calculator.Calc(a, b, op);
