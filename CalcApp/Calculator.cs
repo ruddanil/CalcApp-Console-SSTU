@@ -12,7 +12,7 @@ namespace CalcApp
         {
             return op switch
             {
-                "+" => a + b, $$$$;
+                "+" => a + b,
                 "-" => a - b,
                 "*" => a * b,
                 "/" when b != 0 => a / b,
