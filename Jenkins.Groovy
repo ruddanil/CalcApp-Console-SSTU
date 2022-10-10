@@ -19,7 +19,7 @@ pipeline {
         }
         stage('backup') {
             steps {
-                archiveArtifacts artifacts: 'build/'
+                archiveArtifacts artifacts: 
             }
         }
     }
