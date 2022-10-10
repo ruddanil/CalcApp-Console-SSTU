@@ -17,6 +17,11 @@ pipeline {
                 """
             }
         }
+        stage('backup') {
+            steps {
+                archiveArtifacts artifacts: 'build/'
+            }
+        }
     }
     post {
         success {
