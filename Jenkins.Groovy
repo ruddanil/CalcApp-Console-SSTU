@@ -19,13 +19,11 @@ pipeline {
         }
         stage('backup') {
             steps {
+                archiveArtifacts allowEmptyArchive: true, artifacts: "CalcApp/bin/Debug/net6.0/**", caseSensitive: false, followSymlinks: false, onlyIfSuccessful: true
                 bat """
                 cd ./CalcApp 
                 backup.cmd
                 """
-            }
-            steps {
-                archiveArtifacts allowEmptyArchive: true, artifacts: "CalcApp/bin/Debug/net6.0/**", caseSensitive: false, followSymlinks: false, onlyIfSuccessful: true
             }
         }
        stage('deploy') {
