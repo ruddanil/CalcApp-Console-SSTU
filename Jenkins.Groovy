@@ -17,16 +17,11 @@ pipeline {
                 """
             }
         }
-        stage('archiveArtifacts') {
-            steps {
-                archiveArtifacts allowEmptyArchive: true, artifacts: "CalcApp/bin/Debug/net6.0/**", caseSensitive: false, followSymlinks: false, onlyIfSuccessful: true
-            }
-        }
         stage('backup') {
             steps {
                 bat """
                 cd ./CalcApp 
-                backup.cmd
+                backup.cmd ${env.BUILD_NUMBER}
                 """
             }
         }
@@ -34,7 +29,7 @@ pipeline {
             steps {
                 bat """
                 cd ./CalcApp 
-                deploy.cmd
+                deploy.cmd ${env.BUILD_NUMBER}
                 """
             }
         }
